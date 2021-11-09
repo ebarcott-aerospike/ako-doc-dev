@@ -3,6 +3,8 @@ title: Multiple Aerospike Clusters
 description: Multiple Aerospike Clusters
 ---
 
+<!-- CONTENT AUDIT: This page should be deleted. Merge the RBAC info with the Aerospike-access-control.md page. -->
+
 The Aerospike Kubernetes Operator is able to deploy multiple Aerospike clusters within a single Kubernetes namespace, or in multiple namespaces.
 
 ## Multiple Aerospike Clusters in a Single Namespace

@@ -3,9 +3,11 @@ title: Modify Aerospike cluster
 description: Modify Aerospike cluster
 ---
 
+<!-- CONTENT AUDIT: Should this page continue to exist? It's basically just saying "make your change and use kubectl to apply it." This should be common knowledge for our assumed user base. -->
+
 For this example assume that cluster is deployed using a file named `aerospike-cluster.yaml`.
 
-## Change a config in the aerospikeConfig section
+## Example Configuration Change
 
 Change the `spec.aerospikeConfig.service.proto-fd-max` field in the aerocluster CR to `20000`
 
@@ -25,12 +27,13 @@ spec:
   .
 ```
 
-## Apply the change
+Use kubectl to apply the change.
+
 ```sh
 $ kubectl apply -f aerospike-cluster.yaml
 ```
 
-## Check the pods
+## Check the Pods
 
 Pods will undergo a rolling restart.
 

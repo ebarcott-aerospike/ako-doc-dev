@@ -3,11 +3,13 @@ title: Version Upgrade
 description: Version Upgrade
 ---
 
-The Operator performs a rolling upgrade of the Aerospike cluster one node at a time.  A new node is created with the same pod configuration as the chosen node to upgrade. 
+<!-- CONTENT AUDIT: This page seems unnecessary. Maybe it can go in a separate "examples" section. -->
+
+The Operator performs a rolling upgrade of the Aerospike cluster one node at a time.  A new node is created with the same pod configuration as the chosen node to upgrade.
 
 For this example assume that cluster is deployed using a file named `aerospike-cluster.yaml`.
 
-## Initiate the Upgrade
+## Start the Upgrade
 
 To upgrade the Aerospike cluster change the `spec.image` field in the aerocluster CR to the desired Aerospike enterprise server docker image.
 
@@ -24,14 +26,13 @@ spec:
   .
 ```
 
-## Apply the change
+Use kubectl to apply the change.
+
 ```sh
 $ kubectl apply -f aerospike-cluster.yaml
 ```
 
-## Check the pods
-
-The pods will undergo a rolling restart.
+The pods will undergo a rolling restart. Use kubectl to watch the progress.
 
 ```sh
 $ kubectl get pods -n aerospike
@@ -41,7 +42,7 @@ aerocluster-0-1     1/1     Running         0          3m6s
 aerocluster-0-2     1/1     Running         0          30s
 aerocluster-0-3     1/1     Terminating     0          30s
 ```
-After all the pods have restarted, use kubectl describe to get the status of the cluster. Check `image` for all Pods.
+After all the pods have restarted, use kubectl to get the status of the cluster. Check `image` for all Pods.
 
 ```sh
 $ kubectl -n aerospike describe aerospikecluster aerocluster

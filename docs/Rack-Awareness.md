@@ -11,7 +11,7 @@ Rack Awareness also provides a mechanism which lets database clients read on a p
 
 ## Add Rack Awareness
 
-This example adds rack-awareness to an existing Aerospike cluster CR file.
+This example adds Rack Awareness to an existing Aerospike cluster CR file.
 
 ```yaml
   rackConfig:
