@@ -57,6 +57,10 @@ scrape_configs:
 
 See the Aerospike Database documentation for more information on installing and configuring the Aerospike Monitoring Stack.
 
+## Dashboards
+
+To view the metrics, we recommend you import our pre-made Grafana dashboards from the [Aerospike Monitoring GitHub Repo](https://github.com/aerospike/aerospike-monitoring/tree/master/config/grafana/dashboards).
+
 ## Example
 
 This example demonstrates how to use the Aerospike Monitoring Stack to monitor Aerospike clusters deployed by the Aerospike Kubernetes Operator.
@@ -69,27 +73,30 @@ Create a Kubernetes Secret `aerospike-license` to store the Aerospike license fe
 kubectl create secret generic aerospike-license --from-file=[path to the features.conf-file]
 ```
 
-Deploy an Aerospike cluster with an Aerospike Prometheus Exporter sidecar.
+To deploy an Aerospike cluster with an Aerospike Prometheus Exporter sidecar, add the following to the podSpec section of the cluster's CR file:
 
-```shell
-cat << EOF | helm install aerospike aerospike/aerospike-cluster \
---set devMode=true \
---set aerospikeSecretName=aerospike-license \
--f -
+```yaml
 podSpec:
+  multiPodPerHost: true
   sidecars:
-  - name: aerospike-prometheus-exporter
-    image: "aerospike/aerospike-prometheus-exporter:1.3.0"
-    ports:
-    - containerPort: 9145
-      name: exporter
-EOF
+   - name: aerospike-prometheus-exporter
+     image: aerospike/aerospike-prometheus-exporter:1.3.0
+     ports:
+       - containerPort: 9145
+         name: aerospike-prometheus-exporter
+
 ```
 
-Deploy Prometheus-Grafana Stack using [aerospike-monitoring-stack.yaml](https://docs.aerospike.com/docscloud/assets/aerospike-monitoring-stack.yaml).
+Use kubectl to apply the change.
 
 ```shell
-kubectl apply -f ./aerospike-monitoring-stack.yaml
+kubectl apply -f aerospike-cluster.yaml
+```
+
+Deploy Prometheus-Grafana Stack using [aerospike-monitoring-stack.yaml](https://docs.aerospike.com/docs/cloud/assets/aerospike-monitoring-stack.yaml).
+
+```shell
+kubectl apply -f aerospike-monitoring-stack.yaml
 ```
 
 Connect to the Grafana dashboard.
@@ -98,6 +105,6 @@ Connect to the Grafana dashboard.
 kubectl port-forward service/aerospike-monitoring-stack-grafana 3000:80
 ```
 
-Open `localhost:3000` in browser, and login to Grafana as `admin`/`admin`.
+Open a browser window and go to `localhost:3000`. Log into Grafana with username `admin` and password `admin`.
 
-Import dashboards from [Aerospike Monitoring GitHub Repo](https://github.com/aerospike/aerospike-monitoring/tree/master/config/grafana/dashboards) to view the metrics.
+To view the metrics, we recommend you import dashboards from the [Aerospike Monitoring GitHub Repo](https://github.com/aerospike/aerospike-monitoring/tree/master/config/grafana/dashboards).

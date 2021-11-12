@@ -3,9 +3,7 @@ title: Aerospike Access Control
 description: Aerospike Access Control
 ---
 
-<!-- CONTENT AUDIT: This page should be named RBAC and merged with the RBAC info from Multiple-Aerospike-Clusters.md -->
-
-Aerospike Access Control includes user, role, and privilege creation and maintenance. For more details see [here](https://docs.aerospike.com/docs/configure/security/access-control/).
+Aerospike Access Control includes user, role, and privilege creation and maintenance.
 
 To manage your access controls from the operator, configure the `aerospikeAccessControl` section in the Aerospike cluster's Custom Resource (CR) file.
 
@@ -44,7 +42,7 @@ spec:
           - user-admin
 ```
 
-Use kubectl to apply the change.
+Save and exit the CR file, then use kubectl to apply the change.
 
 ```sh
 kubectl apply -f aerospike-cluster.yaml
@@ -79,7 +77,7 @@ spec:
           - user-admin
 ```
 
-Use kubectl to apply the change.
+Save and exit the CR file, then use kubectl to apply the change.
 
 ```sh
 kubectl apply -f aerospike-cluster.yaml
@@ -114,7 +112,7 @@ spec:
           - user-admin
 ```
 
-Use kubectl to apply the change.
+Save and exit the CR file, then use kubectl to apply the change.
 
 ```sh
 kubectl apply -f aerospike-cluster.yaml
@@ -160,7 +158,7 @@ spec:
           - user-admin
 ```
 
-Use kubectl to apply the change.
+Save and exit the CR file, then use kubectl to apply the change.
 
 ```sh
 kubectl apply -f aerospike-cluster.yaml
@@ -202,7 +200,7 @@ spec:
           - user-admin
 ```
 
-Use kubectl to apply the change.
+Save and exit the CR file, then use kubectl to apply the change.
 
 ```sh
 kubectl apply -f aerospike-cluster.yaml
@@ -243,7 +241,7 @@ spec:
           - user-admin
 ```
 
-Use kubectl to apply the change.
+Save and exit the CR file, then use kubectl to apply the change.
 
 ```sh
 kubectl apply -f aerospike-cluster.yaml
@@ -288,7 +286,7 @@ spec:
           - user-admin
 ```
 
-Use kubectl to apply the change.
+Save and exit the CR file, then use kubectl to apply the change.
 
 ```sh
 kubectl apply -f aerospike-cluster.yaml
@@ -324,7 +322,7 @@ spec:
           - user-admin
 ```
 
-Use kubectl to apply the change.
+Save and exit the CR file, then use kubectl to apply the change.
 
 ```sh
 kubectl apply -f aerospike-cluster.yaml
@@ -355,7 +353,7 @@ spec:
           - user-admin
 ```
 
-Use kubectl to apply the change.
+Save and exit the CR file, then use kubectl to apply the change.
 
 ```sh
 kubectl apply -f aerospike-cluster.yaml

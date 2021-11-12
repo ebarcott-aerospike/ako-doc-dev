@@ -3,9 +3,9 @@ title: Modify Aerospike cluster
 description: Modify Aerospike cluster
 ---
 
-<!-- CONTENT AUDIT: Should this page continue to exist? It's basically just saying "make your change and use kubectl to apply it." This should be common knowledge for our assumed user base. -->
+The Aerospike Kubernetes Operator makes it easier for you to use Aerospike Enterprise clusters on Kubernetes. Instead of making changes to the cluster by hand, you specify changes in the Aerospike cluster CR file, then use `kubectl apply` to apply these changes. The Operator picks up on the changes and does what it needs to do in order to make them happen.
 
-For this example assume that cluster is deployed using a file named `aerospike-cluster.yaml`.
+For this example assume that the cluster was deployed using a file named `aerospike-cluster.yaml`.
 
 ## Example Configuration Change
 
@@ -27,10 +27,10 @@ spec:
   .
 ```
 
-Use kubectl to apply the change.
+Save and exit the CR file, then use kubectl to apply the change.
 
-```sh
-$ kubectl apply -f aerospike-cluster.yaml
+```shell
+kubectl apply -f aerospike-cluster.yaml
 ```
 
 ## Check the Pods

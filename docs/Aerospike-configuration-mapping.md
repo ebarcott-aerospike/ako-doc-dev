@@ -25,7 +25,7 @@ replication-factor: 2
 memory-size: 4294967296
 ```
 
-`aerospike.conf`
+aerospike.conf
 
 ```
 replication-factor 2
@@ -47,7 +47,7 @@ Or
 memory-size: 419430400  # 400M
 ```
 
-`aerospike.conf`
+aerospike.conf
 
 ```
 memory-size 4G
@@ -68,7 +68,7 @@ addresses:
   - 192.168.5.1
 ```
 
-`aerospike.conf`
+aerospike.conf
 
 ```
 address 192.168.1.1
@@ -83,7 +83,7 @@ files:
   - /opt/aerospike/ns2.dat
 ```
 
-`aerospike.conf`
+aerospike.conf
 
 ```
 file /opt/aerospike/ns1.dat
@@ -102,7 +102,7 @@ service:
   proto-fd-max: 15000
 ```
 
-`aerospike.conf`
+aerospike.conf
 
 ```
 service {
@@ -138,7 +138,7 @@ namespaces:
       type: memory
 ```
 
-`aerospike.conf`
+aerospike.conf
 
 ```
 namespace test {
@@ -179,7 +179,7 @@ namespaces:
       data-in-memory: true
 ```
 
-`aerospike.conf`
+aerospike.conf
 
 ```
 namespace test {
@@ -239,7 +239,7 @@ mod-lua:
   user-path: /opt/aerospike/usr/udf/lua
 ```
 
-`aerospike.conf`
+aerospike.conf
 
 ```
 

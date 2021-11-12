@@ -3,8 +3,6 @@ title: Version Upgrade
 description: Version Upgrade
 ---
 
-<!-- CONTENT AUDIT: This page seems unnecessary. Maybe it can go in a separate "examples" section. -->
-
 The Operator performs a rolling upgrade of the Aerospike cluster one node at a time.  A new node is created with the same pod configuration as the chosen node to upgrade.
 
 For this example assume that cluster is deployed using a file named `aerospike-cluster.yaml`.
@@ -29,7 +27,7 @@ spec:
 Use kubectl to apply the change.
 
 ```sh
-$ kubectl apply -f aerospike-cluster.yaml
+kubectl apply -f aerospike-cluster.yaml
 ```
 
 The pods will undergo a rolling restart. Use kubectl to watch the progress.

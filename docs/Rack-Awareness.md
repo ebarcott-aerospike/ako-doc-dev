@@ -68,6 +68,12 @@ This example adds Rack Awareness to an existing Aerospike cluster CR file.
           type: memory
 ```
 
+Save and exit the CR file, then use kubectl to apply the change.
+
+```shell
+kubectl apply -f aerospike-cluster.yaml
+```
+
 For the full CR file, see the [example rack-enabled cluster CR](https://github.com/aerospike/aerospike-kubernetes-operator/blob/master/config/samples/rack_enabled_cluster_cr.yaml).
 
 This and other example CRs are stored in [the main Aerospike Kubernetes Operator repository](https://github.com/aerospike/aerospike-kubernetes-operator/tree/master/config/samples).
@@ -97,6 +103,12 @@ To add a new rack, add a new section to the CR file under the `rackConfig.racks`
       .
       - id: 3
         zone: us-central1-c
+```
+
+Save and exit the CR file, then use kubectl to apply the change.
+
+```shell
+kubectl apply -f aerospike-cluster.yaml
 ```
 
 The Aerospike Kubernetes Operator redistributes cluster nodes across racks whenever the cluster size or the number of racks changes. If you add a rack without increasing the cluster size, the nodes will be redistributed. The number of nodes on existing racks will be scaled down, and the number of nodes on the new rack will be scaled up, per the usual topology rules.
@@ -146,6 +158,12 @@ In the following example, the aerospikeConfig is a patch which will be used for 
                   secretName: aerospike-secret
               aerospike:
                 path: /etc/aerospike/secret
+```
+
+Save and exit the CR file, then use kubectl to apply the change.
+
+```shell
+kubectl apply -f aerospike-cluster.yaml
 ```
 
 ## Merge AerospikeConfig
@@ -232,6 +250,12 @@ After merging the rack-local aerospikeConfig with the common global aerospikeCon
         # storage-engine type is changed hence its replaced
         storage-engine:
           type: memory
+```
+
+Save and exit the CR file, then use kubectl to apply the change.
+
+```shell
+kubectl apply -f aerospike-cluster.yaml
 ```
 
 ## Remove a Rack

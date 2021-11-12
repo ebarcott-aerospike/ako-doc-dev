@@ -3,8 +3,6 @@ title: Scaling
 description: Scaling
 ---
 
-<!-- CONTENT AUDIT: This page seems unnecessary. Maybe it can go in a separate "examples" section. -->
-
 For this example assume that cluster is deployed using a file named `aerospike-cluster.yaml`.
 
 Change the `spec.size` field in the yaml file to scale the cluster up or down to the specified number of pods.
@@ -25,7 +23,7 @@ spec:
 Use kubectl to apply the change.
 
 ```sh
-$ kubectl apply -f aerospike-cluster.yaml
+kubectl apply -f aerospike-cluster.yaml
 ```
 
 Check the pods.
